@@ -11,8 +11,8 @@
 
 <nav>
     <ul>
-        <li><a href="/View/about.phpt.php">About page</a></li>
-        <li><a href="/View/contact.phpt.php">Contact page</a></li>
+        <li><a href="/about">About page</a></li>
+        <li><a href="/contact">Contact page</a></li>
     </ul>
 </nav>
 
