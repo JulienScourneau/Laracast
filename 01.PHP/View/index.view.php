@@ -1,20 +1,16 @@
 <?php require('partials/head.php'); ?>
 
-<ul>
-    <?php foreach ($tasks
+    <ul>
+        <?php foreach ($names as $user) : ?>
+            <li>
+                <?= $user->name ?>
+            </li>
 
-                   as $task) : ?>
-        <li>
-            <?php if ($task->isComplete()) : ?>
-                <strike><?= $task->getDescription() ?></strike>
-            <?php else : ?>
-                <?= $task->getDescription() ?>
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
 
-<h1>Submit Name</h1>
+        <?php endforeach; ?>
+    </ul>
+
+    <h1>Submit Name</h1>
     <form action="/names" method="post">
         <label>
             <input type="text" name="name">

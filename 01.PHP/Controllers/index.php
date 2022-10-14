@@ -1,5 +1,5 @@
 <?php
 
-$tasks = $app['database']->selectAll("task", "Task");
+$names = $app['database']->selectAll("users");
 
 require 'View/index.view.php';
