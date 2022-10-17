@@ -1,6 +1,10 @@
 <?php
 
-class UsersController{
+namespace App\Controllers;
+use App\Core\App;
+
+class UsersController
+{
     public function index()
     {
         $names = App::get('database')->selectAll("users");
@@ -9,8 +13,8 @@ class UsersController{
 
     public function store()
     {
-        App::get('database')->insert('users',[
-            'name'=>$_POST['name']
+        App::get('database')->insert('users', [
+            'name' => $_POST['name']
         ]);
 
         return redirect('users');

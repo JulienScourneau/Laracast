@@ -1,5 +1,6 @@
 <?php
 
+use App\Core\App;
 use database\Connection;
 use database\queryBuilder;
 
@@ -13,7 +14,7 @@ App::bind('database', new queryBuilder(
 function view($name, $data = [])
 {
     extract($data);
-    return require "View/{$name}.view.php";
+    return require "App/View/{$name}.view.php";
 }
 
 function redirect($path)
