@@ -2,9 +2,10 @@
 
 use database\Connection;
 use database\queryBuilder;
-$app = [];
 
-$app['config'] = require './config.php';
+App::bind('config', require './config.php');
 
 
-$app['database'] = new queryBuilder(Connection::make($app['config']['database']));
+App::bind('database', new queryBuilder(
+    Connection::make(App::get('config')['database'])
+));
