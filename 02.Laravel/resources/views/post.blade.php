@@ -9,21 +9,11 @@
     <title>Blog</title>
 </head>
 <body>
-<h1>Hello World</h1>
-
-<?php foreach ($posts as $post): ?>
+<h1>post</h1>
 <article>
-    <a href="/post/"<?= $post->slug; ?>>
-    <h1><?= $post->title ?></h1>
-    </a>
+    <?= $post; ?>
 
-
-    <div>
-            <?= $post->excerpt ?>
-    </div>
 </article>
-<?php endforeach; ?>
-
-
+<a href="/">Back</a>
 </body>
 </html>
