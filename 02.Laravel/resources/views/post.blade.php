@@ -9,10 +9,9 @@
     <title>Blog</title>
 </head>
 <body>
-<h1>post</h1>
 <article>
-    <?= $post; ?>
-
+    <h1><?= $post->title?></h1>
+    <?= $post->body ?>
 </article>
 <a href="/">Back</a>
 </body>

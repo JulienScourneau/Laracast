@@ -20,26 +20,15 @@ Route::get('/', function () {
 
     $files = File::files(resource_path('posts/'));
 
-    $posts = [];
+    $posts = Post::all();
 
-    foreach ($files as $file) {
-
-        $document = YamlFrontMatter::parseFile($file);
-        $posts[] = new Post(
-            $document->title,
-            $document->excerpt,
-            $document->date,
-            $document->body(),
-        );
-    }
-    return view('welcome', [
+    return view('posts', [
         'posts' => $posts
     ]);
 });
 
-Route::get('/post/{post}', function ($slug) {
+Route::get('posts/{post}', function ($slug) {
     return view('post', [
         'post' => Post::find($slug)
     ]);
-
 })->where('post', '[A-z_\-]+');
