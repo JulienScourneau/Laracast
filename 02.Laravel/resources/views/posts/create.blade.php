@@ -1,85 +1,20 @@
 @php use App\Models\Category; @endphp
 <x-layout>
-    <section class="px-6 py-8">
-        <x-panel class="max-w-sm mx-auto">
+    <section class="py- max-w-md mx-auto">
+        <h1 class="text-lg font-bold mb-4">Publish New Post</h1>
+        <x-panel>
 
-            <form action="/admin/posts" method="POST">
+            <form action="/admin/posts" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <div class="mb-6">
-                    <label for="title" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Title
-                    </label>
-                    <input
-                        class="border border-gray-400 p-2 w-full"
-                        type="text"
-                        name="title"
-                        id="title"
-                        value="{{old('title')}}"
-                        required
-                    >
+                <x-form.input name="title"/>
+                <x-form.input name="slug"/>
+                <x-form.input name="thumbnail" type="file"/>
+                <x-form.textarea name="excerpt"/>
+                <x-form.textarea name="body"/>
 
-                    @error('title')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="slug" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Slug
-                    </label>
-                    <input
-                        class="border border-gray-400 p-2 w-full"
-                        type="text"
-                        name="slug"
-                        id="slug"
-                        value="{{old('slug')}}"
-                        required
-                    >
-
-                    @error('slug')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="excerpt" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Excerpt
-                    </label>
-                    <textarea
-                        class="border border-gray-400 p-2 w-full resize-none"
-                        name="excerpt"
-                        id="excerpt"
-                        required
-                    >{{old('excerpt')}}</textarea>
-
-                    @error('excerpt')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="body" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Body
-                    </label>
-                    <textarea
-                        class="border border-gray-400 p-2 w-full resize-none"
-                        name="body"
-                        id="body"
-                        rows="5"
-                        required
-                    >{{old('body')}}</textarea>
-
-                    @error('body')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div>
-                    <label for="category_id" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Category
-                    </label>
-
+                <x-form.field>
+                    <x-form.label name="category"/>
                     <select name="category_id" id="category_id">
 
                         @foreach(Category::all() as $category)
@@ -90,13 +25,10 @@
                             </option>
                         @endforeach
                     </select>
+                    <x-form.error name="category"/>
+                </x-form.field>
 
-                    @error('body')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <x-submit-button>Publish</x-submit-button>
+                <x-form.submit-button>Publish</x-form.submit-button>
             </form>
         </x-panel>
 
