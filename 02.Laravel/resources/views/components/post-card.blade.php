@@ -16,7 +16,9 @@
 
             <div class="mt-4">
                 <h1 class="text-3xl">
-                    {{$post->title}}
+                    <a href="/posts/{{$post->slug}}">
+                        {{$post->title}}
+                    </a>
                 </h1>
 
                 <span class="mt-2 block text-gray-400 text-xs">
@@ -27,7 +29,7 @@
 
         <div class="text-sm mt-4">
 
-                {!! $post->excerpt !!}
+            {!! $post->excerpt !!}
 
 
         </div>
