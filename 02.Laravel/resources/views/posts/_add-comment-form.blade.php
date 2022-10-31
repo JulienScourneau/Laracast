@@ -16,7 +16,7 @@
             <div class="mt-6">
                 <textarea
                     name="body"
-                    class="w-full text-sm focus:outline-none focus:ring"
+                    class="w-full text-sm focus:outline-none focus:ring resize-none"
                     rows="5"
                     placeholder="Quick, thing of something to say!"
                     required></textarea>
