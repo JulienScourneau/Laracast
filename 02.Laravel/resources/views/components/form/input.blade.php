@@ -1,14 +1,12 @@
-@props(['name', 'type' => 'text'])
+@props(['name'])
 
 <x-form.field>
     <x-form.label for="{{$name}}" name="{{$name}}"/>
     <input
-        class="border border-gray-400 p-2 w-full"
-        type="{{$type}}"
+        class="border border-gray-300 p-2 w-full rounded"
         name="{{$name}}"
         id="{{$name}}"
-        value="{{old($name)}}"
-        required
+        {{$attributes(['value'=>old($name)])}}
     >
     <x-form.error name="{{$name}}"/>
 </x-form.field>
