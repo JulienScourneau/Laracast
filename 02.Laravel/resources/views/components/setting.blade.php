@@ -16,7 +16,7 @@
                     <a href="/admin/posts"
                        class="flex-1 rounded-xl p-2 {{request()->is('admin/posts') ?'text-white bg-blue-500':'border border-gray-300'}}">Posts</a>
                 </li>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, blanditiis consectetur, dolorum earum eveniet iusto modi neque non officia officiis pariatur perferendis qui quis quod, reiciendis similique unde veniam voluptatum!
+
                 <li class="my-2 flex">
                     <a href="/admin/posts/create"
                        class="flex-1 rounded-xl p-2 {{request()->is('admin/create') ?'text-white bg-blue-500':'border border-gray-300'}}">New Post</a>
