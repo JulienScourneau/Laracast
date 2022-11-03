@@ -7,20 +7,19 @@
     <div class="flex">
 
         <aside class="w-48 flex-shrink-0">
-            <h4 class="font-semibold mb-4 p-2">Links</h4>
             <ul class="mr-2 ">
-                <div class="p-2 mb-2">
+                <li class="mb-2 flex">
                     <a href="/admin/dashboard"
-                       class="w-full rounded-xl {{request()->is('admin/dashboard') ?'text-white bg-blue-500':'border border-gray-300'}} ">
-                        Dashboard
-                    </a>
-                </div>
-                <li class=" block mx-0 mt-2 rounded-xl p-2 {{request()->is('admin/posts') ?'text-white bg-blue-500':'border border-gray-300'}}">
-                    <a href="/admin/posts" class="w-full btn-block">Posts</a>
+                       class="flex-1 rounded-xl p-2 {{request()->is('admin/dashboard') ?'text-white bg-blue-500':'border border-gray-300'}} ">Dashboard</a>
                 </li>
-                <li class="mt-2 p-2 rounded-xl {{request()->is('admin/posts/create') ?'text-white bg-blue-500':'border border-gray-300'}} ">
-                    <a href="/admin/posts/create">New
-                        Post</a>
+                <li class="my-2 flex">
+                    <a href="/admin/posts"
+                       class="flex-1 rounded-xl p-2 {{request()->is('admin/posts') ?'text-white bg-blue-500':'border border-gray-300'}}">Posts</a>
+                </li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, blanditiis consectetur, dolorum earum eveniet iusto modi neque non officia officiis pariatur perferendis qui quis quod, reiciendis similique unde veniam voluptatum!
+                <li class="my-2 flex">
+                    <a href="/admin/posts/create"
+                       class="flex-1 rounded-xl p-2 {{request()->is('admin/create') ?'text-white bg-blue-500':'border border-gray-300'}}">New Post</a>
                 </li>
             </ul>
         </aside>
